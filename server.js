@@ -15,7 +15,7 @@ app.post("/generar-pdf", async (req, res) => {
   const { nombre, edad, correo } = req.body;
 
   const plantillaPath = path.join(__dirname, "plantilla.tex");
-  const outputFile = path.join(__dirname, "documento.pdf");
+  const outputFile = path.join(__dirname, "temp.pdf"); // Cambiar a temp.pdf
   const tempTexFile = path.join(__dirname, "temp.tex");
 
   try {
