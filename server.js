@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/generar-pdf", async (req, res) => {
-  const { nombre, edad, correo } = req.body;
+  const { nombre, edad, correo, fecha } = req.body;
 
   const plantillaPath = path.join(__dirname, "plantilla.tex");
   const outputFile = path.join(__dirname, "temp.pdf"); // Cambiar a temp.pdf
@@ -26,7 +26,8 @@ app.post("/generar-pdf", async (req, res) => {
     plantilla = plantilla
       .replace(/<<nombre>>/g, nombre)
       .replace(/<<edad>>/g, edad)
-      .replace(/<<correo>>/g, correo);
+      .replace(/<<correo>>/g, correo)
+      .replace(/<<fecha>>/g, fecha); // Reemplazar <<fecha>>
 
     // Guardar el archivo temporal
     fs.writeFileSync(tempTexFile, plantilla, "utf8");
@@ -40,7 +41,8 @@ app.post("/generar-pdf", async (req, res) => {
           return res.status(500).send("Error al generar el PDF");
         }
 
-        console.log("PDF generado correctamente:", stdout);
+        console.log("PDF generado correctamente:");
+        // console.log("PDF generado correctamente:", stdout);
 
         // Enviar el PDF generado al cliente
         res.setHeader("Content-Type", "application/pdf");

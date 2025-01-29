@@ -1,6 +1,41 @@
-\documentclass{article}
+% \documentclass{article}
+% \begin{document}
+% Nombre: \textbf{<<nombre>>} \\
+% Edad: \textbf{<<edad>>} \\
+% Correo: \textbf{<<correo>>}
+% \end{document}
+
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
 \begin{document}
-Nombre: \textbf{<<nombre>>} \\
-Edad: \textbf{<<edad>>} \\
-Correo: \textbf{<<correo>>}
+
+\begin{center}
+    \Huge \textbf{Certificado de Participación}\\
+    \vspace{1cm}
+    \LARGE Este es un certificado otorgado a:\\
+    \vspace{1.5cm}
+    \Huge \textbf{<<nombre>>}\\
+    \vspace{1cm}
+    \Large Por su destacada participación en el curso.\\
+    \vspace{1cm}
+    \textbf{Datos del Participante:}\\
+    \vspace{0.5cm}
+    \begin{tabbing}
+        Nombre: \hspace{3cm} \= \textbf{<<nombre>>} \hspace{2cm} \= Edad: \hspace{1cm} \= \textbf{<<edad>>} \\
+        Correo: \> \textbf{<<correo>>}
+    \end{tabbing}
+    \vspace{2cm}
+    % \includegraphics[width=0.3\textwidth]{flag1.png} \hspace{1cm} \includegraphics[width=0.3\textwidth]{flag2.png}
+    \vspace{2cm}
+    \textbf{Fecha de emisión:} \textbf{<<fecha>>}\\
+    \vfill
+    \Large Firma del Organizador\\
+    % \includegraphics[width=4cm]{firma.png}
+\end{center}
+
 \end{document}
